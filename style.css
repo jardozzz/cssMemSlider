@@ -7,30 +7,32 @@
 body{
     background-color:blue;
 }
-a,a:active,a:hover{
-    cursor:default;
+label:hover>div{
+    border-color:red;
+}
+#slide1_1:checked ~ div>.links > label >.inside_link1,
+#slide2_2:checked~div>.links > label > .inside_link2,
+#slide3_3:checked~div>.links > label > .inside_link3,
+#slide4_4:checked~div>.links > label > .inside_link4,
+#slide5_5:checked~div>.links > label > .inside_link5,
+#slide6_6:checked~div>.links > label > .inside_link6
+{
+background-color: black;
 }
 label{ display:inline-block;
-        background-color: white;
-    width:1.75em;
+            width:1.75em;
     height:2.75em;
    cursor:pointer;
   padding:0.75em 0.25em;
+  transition:0.2s
 }
 label+label{
     margin-left:0.5vw;
 }
-/*#slide1_1:checked ~ .wrapper>.slider > .slide1,
-#slide2_2:checked ~ .wrapper>.slider > .slide2,
-#slide3_3:checked ~ .wrapper>.slider > .slide3,
-#slide4_4:checked ~ .wrapper>.slider > .slide4,
-#slide5_5:checked ~ .wrapper>.slider > .slide5
-#slide6_6:checked ~ .wrapper>.slider > .slide6 {
-    order:1}*/
 .inside_link{
     width: 1.25em;
     height:1.25em;
-    background-color: black;
+    background-color: white;
     border: 0.25em solid green;
     border-radius: 50%;
 }
@@ -75,7 +77,7 @@ label+label{
 .slider{
         display:flex;
     position:relative;
-    width:60vw;
+    width:50vw;
     padding-top:3vh;
     margin:0 auto;
     height:50vh;
@@ -85,9 +87,8 @@ label+label{
     grid-area:1/1;
 }
 .slide{
-    width:100%;
-    height:30vh;
-        width:60vw;
+        height:40vh;
+        width:50vw;
     display:inline-block;
 }
 .slide+.slide{
@@ -98,14 +99,15 @@ label>a{
     height:2.75em;
 }
 .slider_text{
+    margin-top: 0.5vh;
     display:inline-block;
-    margin-bottom:3vh;
+    margin-bottom:2.5vh;
     text-align: center;
     font-size:1.25rem;
     line-height:1.25rem;
     
 }
 .slider_img{
-    width:60vw;
+    width:50vw;
     height:40vh;
 }
