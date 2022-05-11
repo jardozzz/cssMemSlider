@@ -7,16 +7,26 @@
 body{
     background-color:blue;
 }
-a{ display:inline-block;
+a,a:active,a:hover{
+    cursor:default;
+}
+label{ display:inline-block;
         background-color: white;
     width:1.75em;
     height:2.75em;
-   
+   cursor:pointer;
   padding:0.75em 0.25em;
 }
-a+a{
+label+label{
     margin-left:0.5vw;
 }
+/*#slide1_1:checked ~ .wrapper>.slider > .slide1,
+#slide2_2:checked ~ .wrapper>.slider > .slide2,
+#slide3_3:checked ~ .wrapper>.slider > .slide3,
+#slide4_4:checked ~ .wrapper>.slider > .slide4,
+#slide5_5:checked ~ .wrapper>.slider > .slide5
+#slide6_6:checked ~ .wrapper>.slider > .slide6 {
+    order:1}*/
 .inside_link{
     width: 1.25em;
     height:1.25em;
@@ -24,6 +34,14 @@ a+a{
     border: 0.25em solid green;
     border-radius: 50%;
 }
+.inputs{
+    width:0;
+    height: 0;
+    display:inline;
+    margin:0;
+}
+
+
 .links{
     z-index:2;
     margin-bottom:calc(7vh - 3.25em);
@@ -31,6 +49,21 @@ a+a{
     justify-self:end;
     align-self:end;
     grid-area:1/1;
+}
+#slide2_2:checked~div>div>.slide1{
+    margin-left:-101%
+}
+#slide3_3:checked~div>div>.slide1{
+    margin-left:-202%
+}
+#slide4_4:checked~div>div>.slide1{
+    margin-left:-303%
+}
+#slide5_5:checked~div>div>.slide1{
+    margin-left:-404%
+}
+#slide6_6:checked~div>div>.slide1{
+    margin-left:-505%
 }
 .wrapper{
     height:50vh;
@@ -46,8 +79,9 @@ a+a{
     padding-top:3vh;
     margin:0 auto;
     height:50vh;
-    overflow: hidden;
-    scroll-behavior: smooth;
+    flex-direction: row;
+    overflow:hidden;
+        scroll-behavior: smooth;
     grid-area:1/1;
 }
 .slide{
@@ -59,25 +93,10 @@ a+a{
 .slide+.slide{
     margin-left:1%
 }
-/*.slide1{
-    width:100%;
-    height:30vh
+label>a{
+    width:1.75em;
+    height:2.75em;
 }
-.slide2{
-   margin-left:100%;
-}
-.slide3{
-    left:120vw
-}
-.slide4{
-    left:180vw
-}
-.slide5{
-    left:240vw
-}
-.slide6{
-    left:300vw
-}*/
 .slider_text{
     display:inline-block;
     margin-bottom:3vh;
